@@ -32,3 +32,4 @@ Buka `index.html` di browser, atau jalankan `npx serve` dari folder project.
 - `input.css` — komponen
 - `assets/site.js` — menu mobile + hero slider
 - `npm install` lalu `npm run build` setelah mengubah CSS
+  
