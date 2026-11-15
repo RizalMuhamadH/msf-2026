@@ -213,4 +213,22 @@
       step(dx < 0 ? 1 : -1);
     }, { passive: true });
   }
+
+  /* Home rundown preview expand */
+  document.querySelectorAll('[data-agenda-expand]').forEach((box) => {
+    const btn = box.querySelector('[data-agenda-toggle]');
+    const label = box.querySelector('[data-agenda-label]');
+    const extras = [...box.querySelectorAll('.home-agenda-list li.is-extra')];
+    if (!btn || !extras.length) return;
+
+    btn.addEventListener('click', () => {
+      const open = !box.classList.contains('is-expanded');
+      box.classList.toggle('is-expanded', open);
+      btn.setAttribute('aria-expanded', String(open));
+      extras.forEach((li) => {
+        li.hidden = !open;
+      });
+      if (label) label.textContent = open ? 'Sembunyikan' : 'Tampilkan semua';
+    });
+  });
 })();

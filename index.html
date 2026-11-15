@@ -112,13 +112,13 @@
             <a href="tentang.html" class="btn btn-navy">Baca tentang forum</a>
           </div>
         </div>
-        <div class="home-about-visual">
-          <img class="home-shot home-shot-lg" src="assets/tentang/atas/msf2025-atas-05.jpg" width="840" height="420" alt="Dokumentasi Media Sustainability Forum 2025" loading="eager">
+        <div class="home-about-visual" aria-label="Dokumentasi MSF 2025">
+          <img class="home-shot home-shot-lg" src="assets/tentang/atas/msf2025-atas-05.jpg" width="840" height="560" alt="Dokumentasi Media Sustainability Forum 2025" loading="eager">
           <div class="home-shot-grid">
-            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-02.jpg" width="200" height="150" alt="Dokumentasi MSF 2025" loading="lazy">
-            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-03.jpg" width="200" height="150" alt="Dokumentasi MSF 2025" loading="lazy">
-            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-04.jpg" width="200" height="150" alt="Dokumentasi MSF 2025" loading="lazy">
-            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-01.jpg" width="200" height="150" alt="Dokumentasi MSF 2025" loading="lazy">
+            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-02.jpg" width="280" height="210" alt="Dokumentasi MSF 2025" loading="lazy">
+            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-03.jpg" width="280" height="210" alt="Dokumentasi MSF 2025" loading="lazy">
+            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-04.jpg" width="280" height="210" alt="Dokumentasi MSF 2025" loading="lazy">
+            <img class="home-shot" src="assets/tentang/atas/msf2025-atas-01.jpg" width="280" height="210" alt="Dokumentasi MSF 2025" loading="lazy">
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
             </li>
           </ol>
         </div>
-        <div class="home-agenda">
+        <div class="home-agenda" data-agenda-expand>
           <div class="home-agenda-head">
             <h3><svg class="ico" aria-hidden="true" style="display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:6px"><use href="assets/icons.svg#i-clock"></use></svg>Cuplikan rundown</h3>
             <a href="rundown.html">Lihat Selengkapnya</a>
@@ -173,10 +173,24 @@
             </li>
             <li>
               <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-clock"></use></svg>
+              <time>2 Des · 19.30</time>
+              <strong>STAKEHOLDER MEETING</strong>
+            </li>
+            <li class="is-extra" hidden>
+              <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-clock"></use></svg>
               <time>3 Des · 08.30</time>
-              <strong>AI Training: AI for Journalism</strong>
+              <strong>AI TRAINING: AI FOR JOURNALISM</strong>
+            </li>
+            <li class="is-extra" hidden>
+              <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-clock"></use></svg>
+              <time>3 Des · 14.00</time>
+              <strong>MEDIA BEST PRACTICE: AI DALAM RUANG BERITA</strong>
             </li>
           </ul>
+          <button type="button" class="home-agenda-toggle" data-agenda-toggle aria-expanded="false">
+            <span data-agenda-label>Tampilkan semua</span>
+            <svg class="ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -242,7 +256,7 @@
             <h2 id="sponsor-title" class="section-title">Didukung oleh</h2>
           </div>
         </div>
-        <div class="mitra-dense">
+        <div class="mitra-dense mitra-dense-solo">
           <div class="mitra-main" aria-label="Logo sponsor utama">
             <p class="mitra-label">Sponsor utama</p>
             <div class="mitra-main-logos">
@@ -252,22 +266,6 @@
               <div class="mitra-logo-plate">
                 <img src="assets/logo-komdigi.webp" width="300" height="96" alt="KOMDIGI — Kementerian Komunikasi dan Digital RI">
               </div>
-            </div>
-          </div>
-          <div class="mitra-sponsors" aria-label="Logo sponsor">
-            <div class="sponsor-grid sponsor-grid-dense">
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
-              <div class="sponsor-slot sponsor-mock" title="Mockup" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -289,17 +287,21 @@
       <div class="footer-social" aria-label="Media sosial">
         <div class="social-group">
           <span class="social-label">KTP2JB</span>
-          <a class="social-btn" href="https://ktp2jb.or.id/" target="_blank" rel="noopener noreferrer" aria-label="Website KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"></use></svg></a>
-          <a class="social-btn" href="https://www.instagram.com/ktp2jb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-instagram"></use></svg></a>
-          <a class="social-btn" href="https://www.tiktok.com/@ktp2jb" target="_blank" rel="noopener noreferrer" aria-label="TikTok KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-tiktok"></use></svg></a>
-          <a class="social-btn" href="https://www.youtube.com/@KTP2JB" target="_blank" rel="noopener noreferrer" aria-label="YouTube KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-youtube"></use></svg></a>
+          <div class="social-links">
+            <a class="social-btn" href="https://ktp2jb.or.id/" target="_blank" rel="noopener noreferrer" aria-label="Website KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"></use></svg></a>
+            <a class="social-btn" href="https://www.instagram.com/ktp2jb/" target="_blank" rel="noopener noreferrer" aria-label="Instagram KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-instagram"></use></svg></a>
+            <a class="social-btn" href="https://www.tiktok.com/@ktp2jb" target="_blank" rel="noopener noreferrer" aria-label="TikTok KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-tiktok"></use></svg></a>
+            <a class="social-btn" href="https://www.youtube.com/@KTP2JB" target="_blank" rel="noopener noreferrer" aria-label="YouTube KTP2JB"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-youtube"></use></svg></a>
+          </div>
         </div>
         <div class="social-group">
           <span class="social-label">Promedia</span>
-          <a class="social-btn" href="https://www.promediateknologi.id/" target="_blank" rel="noopener noreferrer" aria-label="Website Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"></use></svg></a>
-          <a class="social-btn" href="https://www.instagram.com/promediaecosystem/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-instagram"></use></svg></a>
-          <a class="social-btn" href="https://www.tiktok.com/@promediaecosystem" target="_blank" rel="noopener noreferrer" aria-label="TikTok Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-tiktok"></use></svg></a>
-          <a class="social-btn" href="https://www.youtube.com/@protv_official" target="_blank" rel="noopener noreferrer" aria-label="YouTube Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-youtube"></use></svg></a>
+          <div class="social-links">
+            <a class="social-btn" href="https://www.promediateknologi.id/" target="_blank" rel="noopener noreferrer" aria-label="Website Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"></use></svg></a>
+            <a class="social-btn" href="https://www.instagram.com/promediaecosystem/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-instagram"></use></svg></a>
+            <a class="social-btn" href="https://www.tiktok.com/@promediaecosystem" target="_blank" rel="noopener noreferrer" aria-label="TikTok Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-tiktok"></use></svg></a>
+            <a class="social-btn" href="https://www.youtube.com/@protv_official" target="_blank" rel="noopener noreferrer" aria-label="YouTube Promedia"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-youtube"></use></svg></a>
+          </div>
         </div>
       </div>
       <div class="footer-meta">
@@ -309,8 +311,15 @@
           Bandung, Jawa Barat, Indonesia
         </p>
         <p>
-          <a href="mailto:marcomm@promediateknologi.id">marcomm@promediateknologi.id</a> | <a href="tel:+628112007667">+62 811-2007-667</a>
+          <a href="mailto:marcomm@promediateknologi.id">marcomm@promediateknologi.id</a>
         </p>
+        <div class="footer-cs">
+          <p class="footer-cs-caption">Hubungi CS untuk pertanyaan &amp; informasi</p>
+          <a class="footer-wa" href="https://wa.me/6281324378993" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp CS Info +62 813-2437-8993">
+            <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-whatsapp"></use></svg>
+            <span>+62 813-2437-8993</span>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
@@ -322,7 +331,7 @@
       { name: 'Dr. Suprapto Sastro Atmojo, S.Pd., M.Si', title: 'Ketua KTP2JB', photo: photo('suprapto.jpg') },
       { name: 'Hj. Meutya Viada Hafid, B.Eng., M.IP.', title: 'Menteri Komunikasi dan Digital', photo: photo('meutya.jpg') },
       { name: 'Prof. Dr. Ir. Rachmat Pambudy, M.S.', title: 'Menteri PPN / Kepala Bappenas', photo: photo('rachmat.jpg') },
-      { name: 'Nezar Patria, S.Fil., M.A., M.B.A.', title: 'Wakil Menteri Komdigi', photo: photo() },
+      { name: 'Nezar Patria, S.Fil., M.A., M.B.A.', title: 'Wakil Menteri Komdigi', photo: photo('hires/nezar_patrea.png') },
       { name: 'Hary Tanoesoedibjo', title: 'Executive Chairman MNC Group', photo: photo('hary.jpg') },
       { name: 'Andi Budiman', title: 'CEO KG Media', photo: photo('andy.jpg') },
       { name: 'Prof. Dr. Edward Omar Sharif Hiariej, S.H., M.Hum', title: 'Wakil Menteri Hukum', photo: photo('edward.jpg') },

@@ -63,11 +63,15 @@
     height: 1em;
     flex-shrink: 0;
     display: block;
-    stroke: currentColor;
-    fill: none;
+    color: inherit;
   }
   .ico use { pointer-events: none; }
   .social-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .social-links {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -95,6 +99,47 @@
     transform: translateY(-1px);
   }
   .social-btn .ico { width: 16px; height: 16px; }
+  .footer-cs {
+    display: grid;
+    gap: 8px;
+    justify-items: center;
+    margin-top: 6px;
+  }
+  .footer-cs-caption {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 650;
+    color: color-mix(in srgb, white 78%, transparent);
+  }
+  .footer-wa {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 11px 18px;
+    border-radius: 999px;
+    background: #25d366;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+    box-shadow: 0 8px 20px color-mix(in srgb, #25d366 35%, transparent);
+    transition: background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .footer-wa:hover {
+    background: #1ebe57;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px color-mix(in srgb, #25d366 42%, transparent);
+  }
+  .footer-wa .ico {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    stroke: none;
+  }
   .ico-chip {
     width: 28px;
     height: 28px;
@@ -1620,25 +1665,30 @@
   .home-about .section-title { margin-bottom: 12px; }
   .home-about-visual {
     display: grid;
+    grid-template-columns: 1.35fr 1fr;
     gap: 10px;
+    align-items: stretch;
+    min-height: 280px;
   }
   .home-shot {
     border-radius: 14px;
-    min-height: 96px;
+    min-height: 0;
     width: 100%;
-    height: 96px;
+    height: 100%;
     object-fit: cover;
     display: block;
     background: #d9dde5;
   }
   .home-shot-lg {
-    min-height: 200px;
-    height: 220px;
+    min-height: 280px;
+    height: 100%;
   }
   .home-shot-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 10px;
+    min-height: 280px;
   }
 
   .home-split {
@@ -1695,6 +1745,40 @@
   .home-agenda-list strong {
     font-size: 13px;
     color: var(--ink);
+    text-transform: uppercase;
+  }
+  .home-agenda-list li.is-extra[hidden] {
+    display: none;
+  }
+  .home-agenda-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    padding: 11px 16px;
+    border: 0;
+    border-top: 1px solid var(--line);
+    background: color-mix(in srgb, var(--mist) 70%, white);
+    color: var(--navy);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background .2s var(--ease), color .2s var(--ease);
+  }
+  .home-agenda-toggle:hover {
+    background: color-mix(in srgb, var(--teal) 12%, white);
+    color: var(--teal-dark);
+  }
+  .home-agenda-toggle .ico {
+    width: 14px;
+    height: 14px;
+    transition: transform .2s var(--ease);
+  }
+  .home-agenda.is-expanded .home-agenda-toggle .ico {
+    transform: rotate(180deg);
   }
 
   .home-section-row {
@@ -1849,6 +1933,20 @@
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
     gap: 12px;
     align-items: stretch;
+  }
+  .mitra-dense-solo {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+  .mitra-dense-solo .mitra-main-logos {
+    min-height: 140px;
+  }
+  .mitra-dense-solo .mitra-logo-plate {
+    min-height: 120px;
+  }
+  .mitra-dense-solo .mitra-logo-plate img {
+    height: 96px;
   }
   .mitra-main,
   .mitra-sponsors {
@@ -2254,10 +2352,16 @@
     font-weight: 700;
   }
   .footer-meta a {
-    color: color-mix(in srgb, var(--teal) 55%, white);
+    color: #fff;
     text-decoration: none;
   }
-  .footer-meta a:hover { text-decoration: underline; }
+  .footer-meta a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .footer-meta a.footer-wa {
+    color: #fff;
+  }
   .footer-copy {
     margin-top: 18px;
     font-size: 12px;
@@ -2415,7 +2519,29 @@
     .mitra-main-logos { grid-template-columns: 1fr 1fr; }
     .partner-row { padding: 20px; gap: 20px; }
     .partner-row img { height: 56px; }
-    .footer-social { flex-direction: column; align-items: center; gap: 8px; }
+    .footer-social {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .social-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+    }
+    .social-label {
+      margin: 0;
+      font-size: 13px;
+      color: color-mix(in srgb, white 70%, transparent);
+    }
+    .social-links {
+      justify-content: center;
+    }
+    .footer-wa {
+      width: min(100%, 320px);
+    }
     .site-footer-tight { padding-inline: 56px; }
     .footer-pattern { width: 48px; opacity: .85; }
     .register-form { padding: 20px; }
@@ -2426,7 +2552,22 @@
     .rundown-avatar { width: 84px; height: 84px; }
     .rundown-sessions { gap: 36px; padding-block: 28px 8px; }
     .event-strip-line i { margin-inline: 10px; }
-    .home-shot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .home-about-visual {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    .home-shot-lg {
+      min-height: 200px;
+      height: 220px;
+    }
+    .home-shot-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      min-height: 0;
+    }
+    .home-shot-grid .home-shot {
+      height: 110px;
+    }
     .home-section-row { flex-direction: column; align-items: start; }
     .home-agenda-list li { grid-template-columns: 14px auto 1fr; gap: 8px; }
     .focus-band-inner { justify-content: flex-start; }
