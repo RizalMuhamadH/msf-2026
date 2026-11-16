@@ -194,6 +194,8 @@
       },
       {
         label: '3 Desember 2026',
+        /* Speakers kept but temporarily hidden — show TBA card instead */
+        hideSpeakers: true,
         sessions: [
           {
             type: 'Workshop',
@@ -211,7 +213,7 @@
       },
     ];
 
-    const countPeople = (day) => day.sessions.reduce((n, s) => n + s.speakers.length, 0);
+    const countPeople = (day) => day.hideSpeakers ? 0 : day.sessions.reduce((n, s) => n + s.speakers.length, 0);
     const totalPeople = days.reduce((n, d) => n + countPeople(d), 0);
 
     document.getElementById('spk-hero-meta').innerHTML = `
@@ -229,7 +231,16 @@
       </article>
     `;
 
-    const sessionPeople = (session) => {
+    const tbaCard = () => `
+      <article class="spk-tba" aria-label="Pembicara belum diumumkan">
+        <p class="spk-tba-kicker">To Be Announced</p>
+        <h3>Pembicara segera diumumkan</h3>
+        <p>Daftar nama untuk sesi ini masih dalam proses konfirmasi. Pantau halaman ini untuk pembaruan berikutnya.</p>
+      </article>
+    `;
+
+    const sessionPeople = (session, hideSpeakers) => {
+      if (hideSpeakers) return tbaCard();
       if (session.speakers.length) return session.speakers.map(personCard).join('');
       return personCard({
         name: 'Pembicara menyusul',
@@ -247,15 +258,15 @@
               <header class="spk-block-head">
                 <div class="spk-block-top">
                   <span class="agenda-badge">${session.type}</span>
-                  <span class="agenda-count"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> ${session.speakers.length ? `${session.speakers.length} pembicara` : 'Menyusul'}</span>
+                  <span class="agenda-count"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> ${day.hideSpeakers || !session.speakers.length ? 'TBA' : `${session.speakers.length} pembicara`}</span>
                 </div>
                 <h2 class="spk-block-title">
                   <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#${session.icon}"></use></svg>
                   ${session.title}
                 </h2>
               </header>
-              <div class="spk-people">
-                ${sessionPeople(session)}
+              <div class="spk-people ${day.hideSpeakers ? 'spk-people-tba' : ''}">
+                ${sessionPeople(session, day.hideSpeakers)}
               </div>
             </section>
           `).join('')}

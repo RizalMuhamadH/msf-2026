@@ -781,6 +781,22 @@
   }
   .choice-consent { margin-top: 4px; }
   .form-submit { width: 100%; min-height: 52px; }
+  .form-help {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .form-help a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .form-help a:hover {
+    color: var(--teal-dark);
+  }
   .confirm-preview {
     border: 1px solid var(--line);
     border-radius: 20px;
@@ -1382,6 +1398,38 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 12px;
+  }
+  .spk-people-tba {
+    grid-template-columns: 1fr;
+  }
+  .spk-tba {
+    border: 1px dashed color-mix(in srgb, var(--navy) 22%, var(--line));
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--mist) 70%, white);
+    padding: 28px 24px;
+    text-align: center;
+    max-width: 520px;
+  }
+  .spk-tba-kicker {
+    margin: 0 0 8px;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .spk-tba h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 750;
+    color: var(--navy);
+    letter-spacing: -.2px;
+  }
+  .spk-tba p:last-child {
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
   }
   .spk-person {
     display: grid;
