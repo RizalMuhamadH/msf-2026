@@ -67,7 +67,6 @@
             <ul class="daftar-points">
               <li><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar"></use></svg> 2–3 Desember 2026</li>
               <li><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-map-pin"></use></svg> Gedung Dewan Pers, Jakarta Pusat</li>
-              <li><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> Bisa pilih satu atau kedua hari</li>
               <li><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-mail"></use></svg> Undangan dikirim via email, maksimal 2x24 jam</li>
             </ul>
           </div>
@@ -103,19 +102,35 @@
           </div>
 
           <fieldset class="field field-choice">
-            <legend><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar"></use></svg> Hari kehadiran</legend>
-            <p class="field-hint">Peserta dapat memilih satu atau kedua hari.</p>
-            <div class="choice-row">
+            <legend><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar"></use></svg> Sesi kehadiran</legend>
+            <p class="field-hint">Peserta dapat memilih satu atau lebih sesi yang ingin diikuti.</p>
+            <div class="choice-row" style="flex-direction:column;gap:12px">
               <label class="choice">
-                <input type="checkbox" name="hari" value="2 Desember 2026">
-                <span>2 Desember 2026</span>
+                <input type="checkbox" name="hari" value="2 Desember 2026 - Opening &amp; Keynote">
+                <span>2 Desember 2026 - Opening &amp; Keynote</span>
               </label>
               <label class="choice">
-                <input type="checkbox" name="hari" value="3 Desember 2026">
-                <span>3 Desember 2026</span>
+                <input type="checkbox" name="hari" value="2 Desember 2026 - Strategic Panel 01 &quot;The New Gateway: Beyond Search&quot;">
+                <span>2 Desember 2026 - Strategic Panel 01 &quot;The New Gateway: Beyond Search&quot;</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="hari" value="2 Desember 2026 - Strategic Panel 02 &quot;Rules &amp; Roadmap&quot;">
+                <span>2 Desember 2026 - Strategic Panel 02 &quot;Rules &amp; Roadmap&quot;</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="hari" value="2 Desember 2026 - Platform Media Forum">
+                <span>2 Desember 2026 - Platform Media Forum</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="hari" value="3 Desember 2026 - Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis">
+                <span>3 Desember 2026 - Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="hari" value="3 Desember 2026 - Media Best Practice &quot;AI dalam Ruang Berita: Perspektif Bisnis dan Editorial”">
+                <span>3 Desember 2026 - Media Best Practice &quot;AI dalam Ruang Berita: Perspektif Bisnis dan Editorial”</span>
               </label>
             </div>
-            <p class="field-error" id="hari-error" hidden>Pilih minimal satu hari kehadiran.</p>
+            <p class="field-error" id="hari-error" hidden>Pilih minimal satu sesi kehadiran.</p>
           </fieldset>
 
           <label class="choice choice-consent">
@@ -157,7 +172,7 @@
               <div><dt>Nama Lengkap</dt><dd id="out-nama-2">—</dd></div>
               <div><dt>Alamat Email</dt><dd id="out-email-meta">—</dd></div>
               <div><dt>Instansi / Media</dt><dd id="out-instansi">—</dd></div>
-              <div><dt>Hari Kehadiran</dt><dd id="out-hari">—</dd></div>
+              <div><dt>Sesi Kehadiran</dt><dd id="out-hari">—</dd></div>
             </dl>
             <p class="confirm-italic">
               Halaman ini adalah bukti pendaftaran, bukan tiket masuk. Undangan resmi akan dikirim ke email di atas, maksimal 2x24 jam setelah pendaftaran. Mohon tunjukkan email undangan tersebut pada meja registrasi di hari acara.
@@ -393,7 +408,7 @@
         document.getElementById('out-nama').textContent = nama;
         document.getElementById('out-nama-2').textContent = nama;
         document.getElementById('out-instansi').textContent = data.get('instansi');
-        document.getElementById('out-hari').textContent = hari.join(' & ');
+        document.getElementById('out-hari').textContent = hari.join(', ');
         if (document.getElementById('out-email')) {
           document.getElementById('out-email').textContent = email;
         }
