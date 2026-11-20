@@ -135,28 +135,33 @@
 
   <script src="assets/site.js"></script>
   <script>
-    const photo = (file) => `assets/speaker-assets/foto-pembicara/${file || 'placeholder.jpg'}`;
+    const photo = (file) => file ? `assets/speaker-assets/foto-pembicara/${file}` : null;
+    /* Urutan sesuai revisi 18 Nov 2026 — photo null = FOTO TBA (perlu download Drive) */
     const roster = [
-      { name: 'Dr. Suprapto Sastro Atmojo, S.Pd., M.Si', title: 'Ketua KTP2JB', photo: photo('suprapto.jpg') },
+      { name: 'Dr. Suprapto Sastro Atmojo, S.Pd., M.Si.', title: 'Ketua Komite Tanggung Jawab Perusahaan Platform Digital untuk Mendukung Jurnalisme Berkualitas (KTP2JB)', photo: photo('suprapto.jpg') },
       { name: 'Hj. Meutya Viada Hafid, B.Eng., M.IP.', title: 'Menteri Komunikasi dan Digital', photo: photo('meutya.jpg') },
-      { name: 'Prof. Dr. Ir. Rachmat Pambudy, M.S.', title: 'Menteri PPN / Kepala Bappenas', photo: photo('rachmat.jpg') },
+      { name: 'Prof. Dr. Ir. Rachmat Pambudy, M.S.', title: 'Menteri Perencanaan Pembangunan Nasional (PPN) / Kepala Bappenas', photo: photo('rachmat.jpg') },
+      { name: 'Dr. H. Syahganda Nainggolan, M.T.', title: 'Kepala Badan Komunikasi Pemerintah', photo: photo('syahganda.jpg') },
       { name: 'Nezar Patria, S.Fil., M.A., M.B.A.', title: 'Wakil Menteri Komdigi', photo: photo('hires/nezar_patrea.png') },
-      { name: 'Andi Budiman', title: 'CEO KG Media', photo: photo('andy.jpg') },
-      { name: 'Bappenas', title: 'TBA', photo: photo() },
-      { name: 'Platform AI', title: 'TBA', photo: photo() },
+      { name: 'Maliki, ST, MSIE, Ph.D', title: 'Plt. Deputi Bidang Ekonomi dan Transformasi Digital Bappenas', photo: photo('maliki.jpg') },
+      { name: 'Andy Budiman', title: 'CEO KG Media', photo: photo('andy.jpg') },
+      { name: 'Sandy Kunvatanagarn', title: 'OpenAI Head of Global Affairs for ASEAN', photo: photo('sandy.jpg') },
       { name: 'Prof. Dr. Edward Omar Sharif Hiariej, S.H., M.Hum', title: 'Wakil Menteri Hukum', photo: photo('edward.jpg') },
-      { name: 'Dr. Guntur Syahputra Saragih', title: 'Anggota KTP2JB Bidang Kerjasama Perusahaan Pers & Platform', photo: photo('guntur.jpg') },
+      { name: 'Dr. Guntur Syahputra Saragih', title: 'Anggota KTP2JB Bidang Kerja Sama Perusahaan Pers & Platform', photo: photo('guntur.jpg') },
       { name: 'Dahlan Dahi', title: 'Ketua Komisi Digital dan Sustainability Dewan Pers', photo: photo('dahlan.jpg') },
-      { name: 'Dr. Agus Sudibyo, S.I.P., M.Hum', title: 'Ketua Bidang Pendidikan PWI', photo: photo('agus-sudibyo.jpg') },
+      { name: 'Agus Sudibyo', title: 'Ketua Bidang Pendidikan PWI', photo: photo('agus-sudibyo.jpg') },
       { name: 'Wahyu Dhyatmika', title: 'Ketua Umum AMSI', photo: photo('wahyu.jpg') },
-      { name: 'Google', title: 'TBA', photo: photo() },
-      { name: 'Meta', title: 'TBA', photo: photo() },
-      { name: 'TikTok', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
+      { name: 'Indriaswati Dyah Saptaningrum', title: 'Wakil Ketua KTP2JB', photo: photo('indriaswati.jpg') },
+      { name: 'Yos Kusuma', title: 'Google News Partner Indonesia', photo: null },
+      { name: 'Berni Moestafa', title: 'Kepala Kebijakan Publik META untuk Indonesia — TBA', photo: null },
+      { name: 'Rofi Uddarojat', title: 'Politics and Government Partnership TikTok Indonesia', photo: null },
+      { name: 'Damar Juniarto', title: 'Koordinator Bidang Kerja Sama Perusahaan Pers & Platform KTP2JB', photo: photo('damar.jpg') },
+      { name: 'Roni Satria', title: 'Jurnalis CNN Indonesia', photo: photo('roni.jpg') },
+      { name: 'Eddy Sukmana', title: 'Founder & Creative Director TMX Pictures Group', photo: photo('eddy.jpg') },
+      { name: 'Nuzula Anggeraini, S.STP, M.PS, M.URP', title: 'Direktur Ideologi, Kebangsaan, Politik, dan Demokrasi Bappenas', photo: photo('nuzula.jpg') },
+      { name: 'Dedi Prasetia', title: 'Deputy Editor-in-Chief iNews Digita', photo: photo('dedi.jpg') },
+      { name: 'Cahyanto Arie Wibowo', title: 'Director of Business Growth and Innovation Maverick', photo: photo('cahyanto.jpg') },
+      { name: 'Edmiraldo Siregar', title: 'Pemimpin Redaksi Kumparan', photo: null },
     ];
     const pick = (...ids) => ids.map((i) => roster[i]);
 
@@ -167,58 +172,56 @@
           {
             type: 'Keynote',
             icon: 'i-megaphone',
-            title: 'OPENING KEYNOTE',
-            speakers: pick(0, 1, 2),
+            title: 'Opening Keynote',
+            speakers: pick(0, 1, 2, 3),
           },
           {
             type: 'Panel',
             icon: 'i-sparkles',
-            title: 'THE NEW GATEWAY: BEYOND SEARCH',
-            speakers: pick(3, 4, 5, 6),
+            title: 'Strategic Panel 1 — The New Gateway: Beyond Search',
+            speakers: pick(4, 5, 6, 7),
           },
           {
             type: 'Panel',
             icon: 'i-scale',
-            title: 'RULES & ROADMAP',
-            speakers: pick(7, 8, 9, 10, 11),
+            title: 'Strategic Panel 2 — Rules & Roadmap',
+            speakers: pick(8, 9, 10, 11, 12),
           },
           {
             type: 'Panel',
             icon: 'i-users',
-            title: 'PLATFORM MEDIA FORUM',
-            speakers: pick(12, 13, 14),
+            title: 'Platform Media Forum — Meningkatkan Revenue Media melalui Optimalisasi Fitur Platform Digital',
+            speakers: pick(13, 14, 15, 16),
           },
           {
             type: 'Forum',
             icon: 'i-handshake',
-            title: 'STAKEHOLDER MEETING',
+            title: 'Stakeholder Meeting',
             speakers: [],
-            note: 'Detail pembicara menyusul',
+            note: 'Tanpa slot foto pembicara',
           },
         ],
       },
       {
         label: '3 Desember 2026',
-        /* Speakers kept but temporarily hidden — show TBA card instead */
-        hideSpeakers: true,
         sessions: [
           {
             type: 'Workshop',
             icon: 'i-cpu',
-            title: 'AI Training: AI for Journalism',
-            speakers: pick(19),
+            title: 'Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis',
+            speakers: pick(17, 18, 19),
           },
           {
             type: 'Panel',
             icon: 'i-sparkles',
-            title: 'Media Best Practice: AI dalam Ruang Berita',
-            speakers: pick(15, 16, 17, 18),
+            title: 'Best Practice — AI dalam Ruang Berita: Perspektif Bisnis dan Editorial',
+            speakers: pick(20, 21, 22, 23),
           },
         ],
       },
     ];
 
-    const countPeople = (day) => day.hideSpeakers ? 0 : day.sessions.reduce((n, s) => n + s.speakers.length, 0);
+    const countPeople = (day) => day.sessions.reduce((n, s) => n + s.speakers.length, 0);
     const totalPeople = days.reduce((n, d) => n + countPeople(d), 0);
 
     document.getElementById('spk-hero-meta').innerHTML = `
@@ -228,7 +231,11 @@
 
     const personCard = (s) => `
       <article class="spk-person">
-        <div class="spk-person-media"><img src="${s.photo}" width="200" height="240" alt="${s.name}" loading="lazy"></div>
+        <div class="spk-person-media ${s.photo ? '' : 'ph-img'}">
+          ${s.photo
+            ? `<img src="${s.photo}" width="200" height="240" alt="${s.name}" loading="lazy">`
+            : `<strong>FOTO TBA</strong>`}
+        </div>
         <div class="spk-person-body">
           <h3>${s.name}</h3>
           <p>${s.title}</p>
@@ -236,22 +243,9 @@
       </article>
     `;
 
-    const tbaCard = () => `
-      <article class="spk-tba" aria-label="Pembicara belum diumumkan">
-        <p class="spk-tba-kicker">To Be Announced</p>
-        <h3>Pembicara segera diumumkan</h3>
-        <p>Daftar nama untuk sesi ini masih dalam proses konfirmasi. Pantau halaman ini untuk pembaruan berikutnya.</p>
-      </article>
-    `;
-
-    const sessionPeople = (session, hideSpeakers) => {
-      if (hideSpeakers) return tbaCard();
+    const sessionPeople = (session) => {
       if (session.speakers.length) return session.speakers.map(personCard).join('');
-      return personCard({
-        name: 'Pembicara menyusul',
-        title: session.note || 'Data pembicara akan diumumkan',
-        photo: photo(),
-      });
+      return `<article class="spk-tba" aria-label="${session.note || 'Tanpa slot foto'}"><p class="spk-tba-kicker">Catatan</p><h3>${session.title}</h3><p>${session.note || 'Detail pembicara menyusul.'}</p></article>`;
     };
 
     const panels = document.getElementById('speaker-panels');
@@ -263,15 +257,15 @@
               <header class="spk-block-head">
                 <div class="spk-block-top">
                   <span class="agenda-badge">${session.type}</span>
-                  <span class="agenda-count"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> ${day.hideSpeakers || !session.speakers.length ? 'TBA' : `${session.speakers.length} pembicara`}</span>
+                  <span class="agenda-count"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-users"></use></svg> ${session.speakers.length ? `${session.speakers.length} pembicara` : 'Tanpa slot foto'}</span>
                 </div>
                 <h2 class="spk-block-title">
                   <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#${session.icon}"></use></svg>
                   ${session.title}
                 </h2>
               </header>
-              <div class="spk-people ${day.hideSpeakers ? 'spk-people-tba' : ''}">
-                ${sessionPeople(session, day.hideSpeakers)}
+              <div class="spk-people ${session.speakers.length ? '' : 'spk-people-tba'}">
+                ${sessionPeople(session)}
               </div>
             </section>
           `).join('')}

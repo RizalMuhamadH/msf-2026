@@ -138,28 +138,33 @@
 
   <script src="assets/site.js"></script>
   <script>
-    const photo = (file) => `assets/speaker-assets/foto-pembicara/${file || 'placeholder.jpg'}`;
+    const photo = (file) => file ? `assets/speaker-assets/foto-pembicara/${file}` : null;
+    /* Urutan sesuai revisi 18 Nov 2026 — photo null = FOTO TBA (perlu download Drive) */
     const roster = [
-      { name: 'Dr. Suprapto Sastro Atmojo, S.Pd., M.Si', title: 'Ketua KTP2JB', photo: photo('suprapto.jpg') },
+      { name: 'Dr. Suprapto Sastro Atmojo, S.Pd., M.Si.', title: 'Ketua Komite Tanggung Jawab Perusahaan Platform Digital untuk Mendukung Jurnalisme Berkualitas (KTP2JB)', photo: photo('suprapto.jpg') },
       { name: 'Hj. Meutya Viada Hafid, B.Eng., M.IP.', title: 'Menteri Komunikasi dan Digital', photo: photo('meutya.jpg') },
-      { name: 'Prof. Dr. Ir. Rachmat Pambudy, M.S.', title: 'Menteri PPN / Kepala Bappenas', photo: photo('rachmat.jpg') },
+      { name: 'Prof. Dr. Ir. Rachmat Pambudy, M.S.', title: 'Menteri Perencanaan Pembangunan Nasional (PPN) / Kepala Bappenas', photo: photo('rachmat.jpg') },
+      { name: 'Dr. H. Syahganda Nainggolan, M.T.', title: 'Kepala Badan Komunikasi Pemerintah', photo: photo('syahganda.jpg') },
       { name: 'Nezar Patria, S.Fil., M.A., M.B.A.', title: 'Wakil Menteri Komdigi', photo: photo('hires/nezar_patrea.png') },
-      { name: 'Andi Budiman', title: 'CEO KG Media', photo: photo('andy.jpg') },
-      { name: 'Bappenas', title: 'TBA', photo: photo() },
-      { name: 'Platform AI', title: 'TBA', photo: photo() },
+      { name: 'Maliki, ST, MSIE, Ph.D', title: 'Plt. Deputi Bidang Ekonomi dan Transformasi Digital Bappenas', photo: photo('maliki.jpg') },
+      { name: 'Andy Budiman', title: 'CEO KG Media', photo: photo('andy.jpg') },
+      { name: 'Sandy Kunvatanagarn', title: 'OpenAI Head of Global Affairs for ASEAN', photo: photo('sandy.jpg') },
       { name: 'Prof. Dr. Edward Omar Sharif Hiariej, S.H., M.Hum', title: 'Wakil Menteri Hukum', photo: photo('edward.jpg') },
-      { name: 'Dr. Guntur Syahputra Saragih', title: 'Anggota KTP2JB Bidang Kerjasama Perusahaan Pers & Platform', photo: photo('guntur.jpg') },
+      { name: 'Dr. Guntur Syahputra Saragih', title: 'Anggota KTP2JB Bidang Kerja Sama Perusahaan Pers & Platform', photo: photo('guntur.jpg') },
       { name: 'Dahlan Dahi', title: 'Ketua Komisi Digital dan Sustainability Dewan Pers', photo: photo('dahlan.jpg') },
-      { name: 'Dr. Agus Sudibyo, S.I.P., M.Hum', title: 'Ketua Bidang Pendidikan PWI', photo: photo('agus-sudibyo.jpg') },
+      { name: 'Agus Sudibyo', title: 'Ketua Bidang Pendidikan PWI', photo: photo('agus-sudibyo.jpg') },
       { name: 'Wahyu Dhyatmika', title: 'Ketua Umum AMSI', photo: photo('wahyu.jpg') },
-      { name: 'Google', title: 'TBA', photo: photo() },
-      { name: 'Meta', title: 'TBA', photo: photo() },
-      { name: 'TikTok', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
-      { name: 'Pembicara TBA', title: 'TBA', photo: photo() },
+      { name: 'Indriaswati Dyah Saptaningrum', title: 'Wakil Ketua KTP2JB', photo: photo('indriaswati.jpg') },
+      { name: 'Yos Kusuma', title: 'Google News Partner Indonesia', photo: null },
+      { name: 'Berni Moestafa', title: 'Kepala Kebijakan Publik META untuk Indonesia — TBA', photo: null },
+      { name: 'Rofi Uddarojat', title: 'Politics and Government Partnership TikTok Indonesia', photo: null },
+      { name: 'Damar Juniarto', title: 'Koordinator Bidang Kerja Sama Perusahaan Pers & Platform KTP2JB', photo: photo('damar.jpg') },
+      { name: 'Roni Satria', title: 'Jurnalis CNN Indonesia', photo: photo('roni.jpg') },
+      { name: 'Eddy Sukmana', title: 'Founder & Creative Director TMX Pictures Group', photo: photo('eddy.jpg') },
+      { name: 'Nuzula Anggeraini, S.STP, M.PS, M.URP', title: 'Direktur Ideologi, Kebangsaan, Politik, dan Demokrasi Bappenas', photo: photo('nuzula.jpg') },
+      { name: 'Dedi Prasetia', title: 'Deputy Editor-in-Chief iNews Digita', photo: photo('dedi.jpg') },
+      { name: 'Cahyanto Arie Wibowo', title: 'Director of Business Growth and Innovation Maverick', photo: photo('cahyanto.jpg') },
+      { name: 'Edmiraldo Siregar', title: 'Pemimpin Redaksi Kumparan', photo: null },
     ];
     const pick = (...ids) => ids.map((i) => roster[i]);
 
@@ -168,45 +173,45 @@
         label: '2 Desember 2026',
         sessions: [
           {
-            time: '09.00',
-            end: '10.30',
+            time: '09.10',
+            end: '10.00',
             type: 'Keynote',
             icon: 'i-megaphone',
-            title: 'OPENING KEYNOTE',
-            speakers: pick(0, 1, 2),
+            title: 'Opening Keynote',
+            speakers: pick(0, 1, 2, 3),
           },
           {
-            time: '10.30',
+            time: '10.10',
             end: '12.00',
             type: 'Panel',
             icon: 'i-sparkles',
-            title: 'THE NEW GATEWAY: BEYOND SEARCH',
-            speakers: pick(3, 4, 5, 6),
+            title: 'Strategic Panel 1 — The New Gateway: Beyond Search',
+            speakers: pick(4, 5, 6, 7),
           },
           {
             time: '13.00',
-            end: '14.30',
+            end: '15.00',
             type: 'Panel',
             icon: 'i-scale',
-            title: 'RULES & ROADMAP',
-            speakers: pick(7, 8, 9, 10, 11),
+            title: 'Strategic Panel 2 — Rules & Roadmap',
+            speakers: pick(8, 9, 10, 11, 12),
           },
           {
-            time: '15.30',
-            end: '17.00',
+            time: '15.40',
+            end: '17.10',
             type: 'Panel',
             icon: 'i-users',
-            title: 'PLATFORM MEDIA FORUM',
-            speakers: pick(12, 13, 14),
+            title: 'Platform Media Forum — Meningkatkan Revenue Media melalui Optimalisasi Fitur Platform Digital',
+            speakers: pick(13, 14, 15, 16),
           },
           {
-            time: '19.30',
-            end: '22.00',
+            time: '19.10',
+            end: '21.10',
             type: 'Forum',
             icon: 'i-handshake',
-            title: 'STAKEHOLDER MEETING',
+            title: 'Stakeholder Meeting',
             speakers: [],
-            note: 'Detail pembicara menyusul',
+            note: 'Tanpa slot foto pembicara',
           },
         ],
       },
@@ -214,20 +219,20 @@
         label: '3 Desember 2026',
         sessions: [
           {
-            time: '08.30',
-            end: '12.00',
+            time: '08.45',
+            end: '11.45',
             type: 'Workshop',
             icon: 'i-cpu',
-            title: 'AI Training: AI for Journalism',
-            speakers: pick(19),
+            title: 'Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis',
+            speakers: pick(17, 18, 19),
           },
           {
-            time: '14.00',
+            time: '14.10',
             end: '16.00',
             type: 'Panel',
             icon: 'i-sparkles',
-            title: 'Media Best Practice: AI dalam Ruang Berita',
-            speakers: pick(15, 16, 17, 18),
+            title: 'Best Practice — AI dalam Ruang Berita: Perspektif Bisnis dan Editorial',
+            speakers: pick(20, 21, 22, 23),
           },
         ],
       },
@@ -235,7 +240,9 @@
 
     const speakerChip = (p) => `
       <li class="agenda-chip">
-        <img src="${p.photo}" width="64" height="64" alt="" loading="lazy">
+        ${p.photo
+          ? `<img src="${p.photo}" width="64" height="64" alt="" loading="lazy">`
+          : `<span class="agenda-chip-tba" aria-hidden="true">FOTO TBA</span>`}
         <span>
           <strong>${p.name}</strong>
           <em>${p.title}</em>
@@ -265,10 +272,10 @@
                   <svg class="ico" aria-hidden="true"><use href="assets/icons.svg#${s.icon}"></use></svg>
                   ${s.title}
                 </h2>
-                <ul class="agenda-chips">${s.speakers.length
-                  ? s.speakers.map(speakerChip).join('')
-                  : speakerChip({ name: 'Pembicara menyusul', title: s.note || 'Data akan diumumkan', photo: photo() })
-                }</ul>
+                ${s.speakers.length
+                  ? `<ul class="agenda-chips">${s.speakers.map(speakerChip).join('')}</ul>`
+                  : `<p class="agenda-note">${s.note || 'Detail pembicara menyusul'}</p>`
+                }
               </article>
             </li>
           `).join('')}

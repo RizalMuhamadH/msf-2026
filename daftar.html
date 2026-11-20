@@ -103,31 +103,31 @@
 
           <fieldset class="field field-choice">
             <legend><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar"></use></svg> Sesi kehadiran</legend>
-            <p class="field-hint">Peserta dapat memilih satu atau lebih sesi yang ingin diikuti.</p>
-            <div class="choice-row" style="flex-direction:column;gap:12px">
+            <p class="field-hint">Peserta bisa memilih untuk datang ke sesi-sesi berikut ini (bisa memilih lebih dari 1 sesi).</p>
+            <div class="choice-stack">
               <label class="choice">
                 <input type="checkbox" name="hari" value="2 Desember 2026 - Opening &amp; Keynote">
-                <span>2 Desember 2026 - Opening &amp; Keynote</span>
+                <span>2 Desember 2026 — Opening &amp; Keynote</span>
               </label>
               <label class="choice">
                 <input type="checkbox" name="hari" value="2 Desember 2026 - Strategic Panel 01 &quot;The New Gateway: Beyond Search&quot;">
-                <span>2 Desember 2026 - Strategic Panel 01 &quot;The New Gateway: Beyond Search&quot;</span>
+                <span>2 Desember 2026 — Strategic Panel 01 “The New Gateway: Beyond Search”</span>
               </label>
               <label class="choice">
                 <input type="checkbox" name="hari" value="2 Desember 2026 - Strategic Panel 02 &quot;Rules &amp; Roadmap&quot;">
-                <span>2 Desember 2026 - Strategic Panel 02 &quot;Rules &amp; Roadmap&quot;</span>
+                <span>2 Desember 2026 — Strategic Panel 02 “Rules &amp; Roadmap”</span>
               </label>
               <label class="choice">
                 <input type="checkbox" name="hari" value="2 Desember 2026 - Platform Media Forum">
-                <span>2 Desember 2026 - Platform Media Forum</span>
+                <span>2 Desember 2026 — Platform Media Forum</span>
               </label>
               <label class="choice">
                 <input type="checkbox" name="hari" value="3 Desember 2026 - Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis">
-                <span>3 Desember 2026 - Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis</span>
+                <span>3 Desember 2026 — Pelatihan Penggunaan AI untuk Video Jurnalistik Secara Etis</span>
               </label>
               <label class="choice">
-                <input type="checkbox" name="hari" value="3 Desember 2026 - Media Best Practice &quot;AI dalam Ruang Berita: Perspektif Bisnis dan Editorial”">
-                <span>3 Desember 2026 - Media Best Practice &quot;AI dalam Ruang Berita: Perspektif Bisnis dan Editorial”</span>
+                <input type="checkbox" name="hari" value="3 Desember 2026 - Media Best Practice &quot;AI dalam Ruang Berita: Perspektif Bisnis dan Editorial&quot;">
+                <span>3 Desember 2026 — Media Best Practice “AI dalam Ruang Berita: Perspektif Bisnis dan Editorial”</span>
               </label>
             </div>
             <p class="field-error" id="hari-error" hidden>Pilih minimal satu sesi kehadiran.</p>
@@ -408,7 +408,7 @@
         document.getElementById('out-nama').textContent = nama;
         document.getElementById('out-nama-2').textContent = nama;
         document.getElementById('out-instansi').textContent = data.get('instansi');
-        document.getElementById('out-hari').textContent = hari.join(', ');
+        document.getElementById('out-hari').textContent = hari.join('; ');
         if (document.getElementById('out-email')) {
           document.getElementById('out-email').textContent = email;
         }
