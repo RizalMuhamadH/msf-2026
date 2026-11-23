@@ -28,10 +28,16 @@
   /* Home hero image slider — left/right slide */
   const hero = document.getElementById('hero-slider');
   if (hero) {
-    const slides = [...hero.querySelectorAll('[data-hero-slide]')];
+    const slides = [...hero.querySelectorAll('[data-hero-slide]:not([hidden])')];
     const prevBtn = hero.querySelector('[data-hero-prev]');
     const nextBtn = hero.querySelector('[data-hero-next]');
     const dotsWrap = hero.querySelector('[data-hero-dots]');
+    const single = slides.length < 2;
+    if (single) {
+      prevBtn?.setAttribute('hidden', '');
+      nextBtn?.setAttribute('hidden', '');
+      if (dotsWrap) dotsWrap.hidden = true;
+    }
     const track = hero.querySelector('[data-hero-track]');
     const viewport = hero.querySelector('[data-hero-viewport]');
     let index = 0;
