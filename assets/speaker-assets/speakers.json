@@ -25,7 +25,7 @@
     "sesi": "Day 1 — THE NEW GATEWAY: BEYOND SEARCH",
     "nama": "Nezar Patria, S.Fil., M.A., M.B.A.",
     "jabatan": "Wakil Menteri Komdigi",
-    "foto": null
+    "foto": "foto-pembicara/dini.png"
   },
   {
     "id": "hary-tanoesoedibjo",
@@ -42,25 +42,25 @@
     "foto": "foto-pembicara/andy.jpg"
   },
   {
-    "id": "bappenas-tbd",
+    "id": "dini-maghfirra",
     "sesi": "Day 1 — THE NEW GATEWAY: BEYOND SEARCH",
-    "nama": "Bappenas",
-    "jabatan": "TBD",
-    "foto": null
+    "nama": "Dini Maghfirra",
+    "jabatan": "Direktur Data Pembangunan dan Pemerintah Digital",
+    "foto": "foto-pembicara/dini.png"
   },
   {
     "id": "platform-ai-tbd",
     "sesi": "Day 1 — THE NEW GATEWAY: BEYOND SEARCH",
     "nama": "Platform AI",
-    "jabatan": "TBD",
-    "foto": null
+    "jabatan": "Direktur Data Pembangunan dan Pemerintah Digital",
+    "foto": "foto-pembicara/dini.png"
   },
   {
-    "id": "edward-hiariej",
+    "id": "hermansyah-siregar",
     "sesi": "Day 1 — RULES & ROADMAP",
-    "nama": "Prof. Dr. Edward Omar Sharif Hiariej, S.H., M.Hum",
-    "jabatan": "Wakil Menteri Hukum",
-    "foto": "foto-pembicara/edward.jpg"
+    "nama": "Hermansyah Siregar",
+    "jabatan": "Direktur Jenderal Kekayaan Intelektual, Kementerian Hukum Republik Indonesia",
+    "foto": "foto-pembicara/hermansyah.jpg"
   },
   {
     "id": "guntur-syahputra-saragih",
@@ -95,20 +95,20 @@
     "sesi": "Day 1 — PLATFORM MEDIA FORUM",
     "nama": "Google",
     "jabatan": "Platform",
-    "foto": null
+    "foto": "foto-pembicara/dini.png"
   },
   {
     "id": "meta",
     "sesi": "Day 1 — PLATFORM MEDIA FORUM",
     "nama": "Meta",
     "jabatan": "Platform",
-    "foto": null
+    "foto": "foto-pembicara/dini.png"
   },
   {
     "id": "tiktok",
     "sesi": "Day 1 — PLATFORM MEDIA FORUM",
     "nama": "TikTok",
     "jabatan": "Platform",
-    "foto": null
+    "foto": "foto-pembicara/dini.png"
   }
 ]
