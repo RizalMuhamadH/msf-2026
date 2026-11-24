@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <image src="ms-icon-144x144.png" />
+            <text>My App</text>
+        </tile>
+    </msapplication>
+</browserconfig>
