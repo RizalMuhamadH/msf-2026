@@ -1647,7 +1647,7 @@
   }
   .msf-topic-pic {
     width: 280px;
-    aspect-ratio: 1;
+    aspect-ratio: 4 / 5;
     border-radius: 12px;
     overflow: hidden;
     background: #d9dde5;
